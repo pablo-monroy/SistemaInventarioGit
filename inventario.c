@@ -1,19 +1,37 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <windows.h>
 
-int main(){
-    int op;
+struct Equipo {
+    char codigo[20];
+    char nombre[20];
+    char marca[20];
+    float precio;
+    char estado[20];
+};
 
-    do{
-        printf("\n*-*-*-* Sistema inventario con git *-*-*-*\n");
-        printf("\n1.Registrar equipo");
-        printf("\n2.Mostrar equipo registrado");
-        printf("\n3.Modificar equipo");
-        printf("\n4.Eliminar equipo");
+void registrar(struct Equipo *equipo) {
+    system("cls");
+    printf("\n*-*-*-* REGISTRO DE EQUIPO *-*-*-*\n");
 
-        printf("\nSelecione una opcion: ");
-        scanf("%d", &op);
+    printf("\nIngrese código: ");
+    scanf("%s", equipo->codigo);
 
-    } while (op != 5);
+    printf("\nNombre del equipo: ");
+    scanf("%s", equipo->nombre);
 
-    return 0;
-}
+    printf("\nMarca del equipo: ");
+    scanf("%s", equipo->marca);
+
+    printf("\nPrecio del equipo: ");
+    scanf("%f", &equipo->precio);
+
+    printf("\nEstado del equipo: ");
+    scanf("%s", equipo->estado);
+
+    printf("\nRegistrando...");
+    Sleep(2500);
+
+    system("cls");
+    printf("Equipo registrado correctamente\n");
